@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 12.5%;
+  background: hsl(183, 79%, 9%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+.navbar a {
+  position: relative;
+  font-size: 16px;
+  color: hsl(0, 0%, 87%);
+  text-decoration: none;
+  font-weight: 500;
+  margin-right: 30px;
+}
+
+.navbar a::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: hsl(189, 37%, 7%);
+  border-radius: 5px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: 0.5s;
+}
+.navbar a:hover:after {
+  transform: translateY(0px);
+  opacity: 1;
+}
+.background {
+  width: 100%;
+  height: 100vh;
+  background: url(.images/trail.jpeg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 550px;
+  background-image: url(./images/xterrain1.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.container .content {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 58%;
+  height: 100%;
+  background-color: transparent;
+  padding: 80px;
+  color: hsl(0, 0%, 87%);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.content.logo {
+  font-size: 30px;
+}
+.text-sci h2 {
+  font-size: 40px;
+  line-height: 1;
+}
+.text-sci h2 span {
+  font-size: 25px;
+}
+.text-sci p {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.social-icons a i {
+  font-size: 22px;
+  color: hsl(0, 3%, 7%);
+  transition: 0.5s ease-in;
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2);
+}
+.container .logreg-box {
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width: calc(100% -58%);
+  height: 100%;
+  background: transparent;
+}
+/* resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+}
+form {
+  margin: none;
+  max-width: 450px;
+  padding: 20px;
+  border: 1px transparent;
+  border-radius: 10px;
+}
+
+input,
+textarea,
+label {
+  display: block;
+  width: 100%;
+  /* margin: 5px 0px; */
+  padding: 7px;
+  font: inherit;
+  border: transparent;
+  background-color: underline transparent;
+  border-spacing: 10px;
+}
+label {
+  text-align: left;
+}
+/* utility classes */
+.hide {
+  display: none;
+}
+.form-box .remember-forgot {
+  display: flex;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: white;
+  justify-content: space-between;
+  margin: -15px 0 15px;
+}
+.remember-forgot label input {
+  accent-color: white;
+  margin-right: 3px;
+}
+.remember-forgot a {
+  color: white;
+  text-decoration: none;
+}
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+.btn {
+  width: 100%;
+  height: 45px;
+  background: rgb(190, 41, 41);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.form-box .login-register {
+  font-size: 14.5px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 25px;
+}
+.login-register p a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+.login-register p a:hover {
+  text-decoration: underline;
+}
+
+/* footer */
+footer {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
+
+@media screen and (max-width: 680px) {
+  header {
+    padding: 10px 16px;
+  }
+}

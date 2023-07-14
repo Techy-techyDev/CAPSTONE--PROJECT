@@ -40,22 +40,21 @@ app.get("/book-sevice", (req, res) => {
     res.redirect("/sign-in");
   }
 });
-//route for the sign -up page
-app.get("/sign-up", (req, res) => {
-  res.render("sign-up");
-  //render the sign-up page here
+app.get("/booking", (req, res) => {
+  res.render("booking");
+  //render the booking-in page here
 });
-app.get("/sign-in", (req, res) => {
-  res.render("sign-in");
-  //render the sign-in page here
-  // create a session req.session.user
-});
+app.post("/booking", (req, res) => {
+  // get data - body-parser **
+  // check if confirm pass & password match **
+  // check if email is already used/ existing **
+  // encrypt password / create a hash **
+  // store all details in db - insert statement
+  // console.log(req.body)
 
-app.post("/sign-up", (req, res) => {
-  const username = req.body.username;
   if (req.body.password === req.body.confirm) {
     db.query(
-      "SELECT registration_no FROM dealers WHERE registration_no = ?",
+      "SELECT email FROM clients WHERE email = ?",
       [req.body.email],
       (err, results) => {
         if (results.length > 0) {
@@ -68,14 +67,18 @@ app.post("/sign-up", (req, res) => {
           bcrypt.hash(req.body.password, 4, function (err, hash) {
             // we have access to the hashed pass as hash
             db.query(
-              "INSERT INTO dealers(dealer_id,DEALERNAME,TOWN,TELEPHONE,registration_no,password) values(?,?,?,?,?,?)",
+              "INSERT INTO clients(client_id,first_name,last_name,address,city,car_model,telephone,email,password,DEALERNAME) values(?,?,?,?,?,?,?,?,?,?)",
               [
-                req.body.dealer_id,
-                req.body.DEALERNAME,
-                req.body.TOWN,
-                req.body.TELEPHONE,
-                req.body.registration_no,
+                req.body.client_id,
+                req.body.first_name,
+                req.body.last_name,
+                req.body.address,
+                req.body.city,
+                req.body.car_model,
+                req.body.telephone,
+                req.body.email,
                 hash,
+                req.body.DEALERNAME,
               ],
               (error) => {
                 if (error) {
@@ -100,6 +103,113 @@ app.post("/sign-up", (req, res) => {
     });
   }
 });
+// route for the sign -up page
+app.get("/sign-in", (req, res) => {
+  res.render("sign-in");
+  //render the sign-up page here
+});
+
+app.post("/sign-in", (req, res) => {
+  // confirm that email is registered
+  // compare password provided with the hash in db
+
+  db.query(
+    "SELECT * FROM clients WHERE email = ?",
+    [req.body.email],
+    (error, results) => {
+      // handle error
+      if (results.length > 0) {
+        //proceed
+        bcrypt.compare(req.body.password, results[0].password, (err, match) => {
+          if (match) {
+            // create session
+            // console.log(results)
+            req.session.user = results[0];
+            // console.log(req.sessionID)
+            res.redirect("booking");
+          } else {
+            res.render("sign-in", {
+              error: true,
+              errorMessage: "Incorrect Password",
+            });
+          }
+        });
+      } else {
+        res.render("sign-up", {
+          error: true,
+          errorMessage: "Email not registered.",
+        });
+      }
+    }
+  );
+});
+
+app.get("/sign-up", (req, res) => {
+  res.render("sign-up");
+  //render the sign-in page here
+  // create a session req.session.user
+});
+
+app.post("/sign-up", (req, res) => {
+  // get data - body-parser **
+  // check if confirm pass & password match **
+  // check if email is already used/ existing **
+  // encrypt password / create a hash **
+  // store all details in db - insert statement
+  // console.log(req.body)
+
+  if (req.body.password === req.body.confirm) {
+    db.query(
+      "SELECT email FROM clients WHERE email = ?",
+      [req.body.email],
+      (err, results) => {
+        if (results.length > 0) {
+          // email exist in db
+          res.render("sign-up", {
+            error: true,
+            errorMessage: "Email already exists. Use another or login",
+          });
+        } else {
+          bcrypt.hash(req.body.password, 4, function (err, hash) {
+            // we have access to the hashed pass as hash
+            db.query(
+              "INSERT INTO clients(client_id,first_name,last_name,address,city,car_model,telephone,email,password,DEALERNAME) values(?,?,?,?,?,?,?,?,?,?)",
+              [
+                req.body.client_id,
+                req.body.first_name,
+                req.body.last_name,
+                req.body.address,
+                req.body.city,
+                req.body.car_model,
+                req.body.telephone,
+                req.body.email,
+                hash,
+                req.body.DEALERNAME,
+              ],
+              (error) => {
+                if (error) {
+                  res.render("sign-up", {
+                    error: true,
+                    errorMessage:
+                      "Contact Admin, and tell them something very terrible is going on in the server",
+                  });
+                } else {
+                  res.redirect("/sign-in"); // sucessful signup
+                }
+              }
+            );
+          });
+        }
+      }
+    );
+  } else {
+    res.render("sign-up", {
+      error: true,
+      errorMessage: "Password and confirm Password do not match",
+    });
+  }
+});
+
 
 app.listen(3000, () => {
   console.log("app running!!...");

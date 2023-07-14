@@ -1,0 +1,207 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.grid {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  padding: 8px;
+}
+.cell {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.responsive-container {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px !important;
+  /*border: 1px solid #fd5c63;*/
+}
+
+#my-form {
+  width: 100%;
+}
+
+.content {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 40px;
+  /*border: 1px solid #933ec5;*/
+}
+
+.form-row {
+  position: relative;
+  margin-bottom: 25px;
+  padding: 0 4px;
+  width: calc(50% - 8px);
+}
+
+.input-field:focus {
+  border: solid 1px #707070;
+}
+
+.input-field {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 3px;
+  padding: 12px !important;
+  border: solid 1px #dcdcdc;
+  transition: border 0.3s;
+  line-height: 25px;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-field::placeholder {
+  color: rgb(118, 118, 118);
+}
+
+.half-field {
+  display: inline-block;
+  width: calc(50% - 4px);
+  margin-right: 4px;
+}
+
+.marginless {
+  margin-bottom: 8px;
+  white-space: nowrap;
+}
+
+.legend {
+  color: #4d4d4d;
+  width: 100% !important;
+  margin-bottom: 8px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+#errors--property-details,
+#errors--location,
+#errors--booking-details {
+  width: 100%;
+  color: #ff4d4d;
+}
+
+.form-description {
+  color: #767676;
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 24px;
+  white-space: normal;
+}
+
+.input-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: white !important;
+}
+
+.dropdown-icon {
+  position: absolute !important;
+  top: 51px !important;
+  right: 26px !important;
+  line-height: 0 !important;
+  pointer-events: none !important;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+  margin: 0 4px;
+  background-color: #fd5c63;
+}
+
+.submit-btn {
+  background-color: #fd5c63;
+  padding: 7px 21px !important;
+  color: #fff;
+  margin-top: 15px;
+  border-radius: 3px;
+  line-height: 25px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#success-report {
+  background-color: rgba(22, 183, 79, 0.6);
+  padding: 7px 21px !important;
+  visibility: hidden;
+  color: #fff;
+  margin-top: 15px;
+  margin-left: 15px;
+  border-radius: 3px;
+  line-height: 25px;
+  font-size: 18px;
+}
+
+.loader {
+  display: none;
+  width: 15px;
+  height: 15px;
+  margin-left: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top: 3px solid #fff;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 743px) {
+  .form-row {
+    width: 100%;
+  }
+  .input-field {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 744px) {
+  .responsive-container {
+    width: 696px;
+  }
+}
+
+@media (min-width: 1128px) {
+  .responsive-container {
+    width: 1080px;
+  }
+}

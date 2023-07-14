@@ -4,151 +4,278 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- 
-    - primary meta tags
-  -->
-    <title>CHID - home</title>
-    <meta name="title" content="chid- home" />
-    <meta
-      name="description"
-      content="This is a booking service html template made by rechysites"
-    />
-
-    <!-- 
-    - favicon
-  -->
-    <link
-      rel="shortcut icon"
-      href="./images/favicon.png"
-      type="image/svg+xml"
-    />
-
-    <!-- 
-    - google font link
-  -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- 
-    - custom css link
-  -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
-    <!-- 
-    - preload images
-  -->
-    <link rel="preload" as="image" href="./assets/images/hero-banner.png" />
-    <link rel="preload" as="image" href="./assets/images/hero-bg.png" />
+    <title>Booking page</title>
+    <link rel="stylesheet" href="./assets/css/booking.css" />
   </head>
-
-  <body id="top">
-    <!-- 
-    - #PRELOADER
-  -->
-
-    <div class="preloader" data-preloader>
-      <div class="circle"></div>
-    </div>
-
-    <!-- 
-    - #HEADER
-  -->
-
-    <header class="header" data-header>
-      <div class="container">
-        <a href="#" class="logo">
-          <img
-            src="./images/logo.png"
-            width="136"
-            height="46"
-            alt="CHID home"
-          />
-        </a>
-
-        <nav class="navbar" data-navbar>
-          <div class="navbar-top">
-            <a href="#" class="logo">
-              <img
-                src="./images/logo.png"
-                width="136"
-                height="46"
-                alt="CHID home"
-              />
-            </a>
-
-            <button
-              class="nav-close-btn"
-              aria-label="clsoe menu"
-              data-nav-toggler
-            >
-              <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-            </button>
-          </div>
-
-          <ul class="navbar-list">
-            <li class="navbar-item">
-              <a href="#" class="navbar-link title-md">Home</a>
-            </li>
-
-            <li class="navbar-item">
-              <a href="#" class="navbar-link title-md">Dealers</a>
-            </li>
-
-            <li class="navbar-item">
-              <a href="#" class="navbar-link title-md">Services</a>
-            </li>
-
-            <li class="navbar-item">
-              <a href="#" class="navbar-link title-md">Contact</a>
-            </li>
-          </ul>
-
-          <ul class="social-list">
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-pinterest"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-
-            <li>
-              <a href="#" class="social-link">
-                <ion-icon name="logo-youtube"></ion-icon>
-              </a>
-            </li>
-          </ul>
-        </nav>
-
-        <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-          <ion-icon name="menu-outline"></ion-icon>
-        </button>
-
-        <a href="/sign-up" class="btn has-before title-md">Sign Up</a>
-
-        <div class="overlay" data-nav-toggler data-overlay></div>
-      </div>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="/">Dealers</a>
+        <a href="/">Services</a>
+        <a href="/">Contact</a>
+      </nav>
     </header>
+    <div class="page-content bg-white">
+      <div class="banner-one">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div class="banner-content">
+              <h2 class="title">Book a Service for your car</h2>
+
+              <div class="contact-area1">
+                <form
+                  class="dlab-form style-1 dlabForm"
+                  action="https://gmail.us11.list-manage.com/subscribe/post?u=356f1b6384fb86e62996698f6&amp;id=dce7d0c82e&amp;f_id=00568ce0f0"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                >
+                  <div class="row sp10">
+                    <div class="col-12">
+                      <div class="form-group">
+                        <input
+                          type="hidden"
+                          name="URL"
+                          value="From: chidmotors.com"
+                        />
+                        <input
+                          type="hidden"
+                          name="SUBJECT"
+                          value="Book a Service"
+                        />
+
+                        <input
+                          type="text"
+                          name="FNAME"
+                          placeholder="Enter your full name"
+                          required
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="PHONENO"
+                          placeholder="Phone Number"
+                          required
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="EMAIL"
+                          placeholder="Email"
+                          required
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="Date"
+                          name="MMERGE8"
+                          placeholder="Date"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="Time"
+                          name="TIME"
+                          placeholder="Time"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <div class="form-group">
+                          <input
+                            type="text"
+                            name="MMERGE5"
+                            placeholder=" Car Brand"
+                            class="form-control"
+                            required
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="MODEL"
+                          placeholder="Model"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <select class="form-control" name="BRANCH">
+                        <option>Preferred Branch</option>
+
+                        <option>Eldoret</option>
+                        <option>Kisumu</option>
+                        <option>Kitale</option>
+                        <option>Meru</option>
+                        <option>Nairobi</option>
+
+                        <option>Nakuru</option>
+                        <option>Nanyuki</option>
+                      </select>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          type="text"
+                          name="CHASSIS"
+                          placeholder="Chassis Number"
+                          class="form-control"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Start Consent -->
+                    <div class="d24" style="margin-top: 50px">
+                      <div class="consent_in">
+                        <input
+                          type="checkbox"
+                          checked
+                          name="vehicle1"
+                          value="Bike"
+                          placeholder="read here"
+                        />
+                      </div>
+                      <div class="consent_label">
+                        <label for="vehicle1"
+                          >I would like to be kept informed of the latest news,
+                          events and offers from CHID GARAGE</label
+                        >
+                      </div>
+                    </div>
+                    <div class="d24">
+                      <div class="consent_in">
+                        <input
+                          type="checkbox"
+                          checked
+                          name="vehicle1"
+                          value="Bike"
+                          required
+                        />
+                      </div>
+                      <div class="consent_label">
+                        <label for="vehicle1"
+                          >I have read and agree to the
+                          <a
+                            href="images/privacy-policy.pdf"
+                            target="_blank"
+                            style="color: #28a9e2"
+                            >privacy policy</a
+                          ></label
+                        >
+                      </div>
+                    </div>
+                    <!-- End Consent -->
+                    <div class="col-sm-12">
+                      <span
+                        id="mce-CHASSIS-HELPERTEXT"
+                        class="helper_text"
+                      ></span>
+
+                      <div id="mce-responses" class="clear foot">
+                        <div class="response" id="mce-error-response"></div>
+                        <div
+                          class="response"
+                          style="
+                            display: block;
+                            background: #7cf2b0;
+                            text-align: center;
+                            margin: 10px 0;
+                            font-weight: bold;
+                          "
+                          id="mce-success-response"
+                        ></div>
+                      </div>
+                      <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div
+                        style="position: absolute; left: -5000px"
+                        aria-hidden="true"
+                      >
+                        <input
+                          type="text"
+                          name="b_356f1b6384fb86e62996698f6_dce7d0c82e"
+                          tabindex="-1"
+                          value=""
+                        />
+                      </div>
+                      <div class="optionalParent">
+                        <div class="clear foot">
+                          <input
+                            type="submit"
+                            value="SEND MESSAGE"
+                            name="subscribe"
+                            id="mc-embedded-subscribe"
+                            class="btn btn-primary w-100 d-block btn-rounded"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <img
+                class="img1 move-1"
+                src="/images/ologo.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="banner-slider">
+              <div class="swiper-container main-silder-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="dlab-slide-item">
+                      <div class="silder-content">
+                        <div class="inner-content">
+                          <div class="left">
+                            <p class="car-type">CHID GARAGE</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="slider-img">
+                        <img src="/images/master.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="slider-one-pagination">
+                  <div class="btn-prev swiper-button-prev1">
+                    <i class="fas fa-chevron-left"></i>
+                  </div>
+                  <div class="btn-next swiper-button-next1">
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

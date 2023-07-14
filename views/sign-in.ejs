@@ -1,11 +1,11 @@
-  <!DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CHID SIGN UP</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/sign.css" />
   </head>
   <body>
     <header class="header">
@@ -15,24 +15,27 @@
         <a href="/">Services</a>
         <a href="/">Contact</a>
       </nav>
-
     </header>
-    <div class="container">
-     <div class="content">
-      <h2> <i class="bx bxl-firebase"></i>CHID</h2>
-      <div class="text-sci">
-        <h2>Welcome! <br> <span>to CHID your Online Service Master</span></h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet earum dignissimos tempora totam accusantium accusamus enim, quaerat doloremque quisquam quod?</p>
-        <div class="social-icons">
-          <a href="#"><i class='bx bxl-linkedin'></i></a>
-          <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
-          <a href="#"></a>
-          <a href="#"></a>
-        </div>
-      </div>
-     </div>
-     <div class="logreg-box"></div>
+    <div class="background">
+      <div class="shape"></div>
+      <div class="shape"></div>
     </div>
-    
+    <form>
+      <h3>Login Here</h3>
+      <label for="username">Username</label>
+      <input type="text" placeholder="emailor phone" id="username" />
+      <label for="Password">Password</label>
+      <input type="password" placeholder="password" id="password" />
+      <button>Log In</button>
+      <a
+        href="/sign-up"
+        style="position: relative; color: #3818ad; padding: 5px 0"
+        >New Here Sign Up</a
+      >
+      <div class="social">
+        <div class="go"><i class="fab fa-google"></i>Google</div>
+        <div class="fb"><i class="fab fa-facebook"></i>facebook</div>
+      </div>
+    </form>
   </body>
-  </html>
+</html>
